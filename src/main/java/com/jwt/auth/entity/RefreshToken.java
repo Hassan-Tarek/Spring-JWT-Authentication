@@ -16,7 +16,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Getter
 @Setter
@@ -35,7 +35,7 @@ public class RefreshToken {
     private String token;
 
     @Column(name = "expiry_date", nullable = false)
-    private LocalDateTime expiryDate = LocalDateTime.now();
+    private Instant expiryDate;
 
     @Column(name = "revoked", nullable = false)
     private Boolean revoked = false;
