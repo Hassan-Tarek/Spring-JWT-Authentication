@@ -56,11 +56,7 @@ public class RefreshTokenService {
 
     @Transactional
     public void revokeRefreshToken(String token) {
-        refreshTokenRepository.findByToken(token)
-                .ifPresent(refreshToken -> {
-                    refreshToken.setRevoked(true);
-                    refreshTokenRepository.save(refreshToken);
-                });
+        refreshTokenRepository.revokeByToken(token);
     }
 
     @Transactional

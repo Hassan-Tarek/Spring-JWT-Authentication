@@ -8,6 +8,7 @@ import com.jwt.auth.dto.response.UserDto;
 import com.jwt.auth.entity.RefreshToken;
 import com.jwt.auth.entity.Role;
 import com.jwt.auth.entity.User;
+import com.jwt.auth.exception.BadRequestException;
 import com.jwt.auth.exception.RoleNotFoundException;
 import com.jwt.auth.exception.UserAlreadyExistException;
 import com.jwt.auth.mapper.UserMapper;
@@ -81,6 +82,10 @@ public class AuthService {
         );
 
         User user = (User) authentication.getPrincipal();
+        if (!user.getIsEnabled()) {
+            throw new BadRequestException("User is disabled");
+        }
+
         String accessToken = jwtService.generateAccessToken(user);
         RefreshToken refreshToken = refreshTokenService.createRefreshToken(user);
         UserDto userDto = userMapper.toDto(user);

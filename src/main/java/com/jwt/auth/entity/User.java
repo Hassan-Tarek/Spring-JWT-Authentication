@@ -51,6 +51,7 @@ public class User implements UserDetails {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @Builder.Default
     @Column(name = "is_enabled", nullable = false)
     private Boolean isEnabled = true;
 
