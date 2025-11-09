@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "653e004f-c42c-49b1-a3a8-8d98f4bb78af",
+		"name": "Jwt-Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49553555",
+		"_collection_link": "https://hassan-elashry-5839948.postman.co/workspace/Hassan-Tarek's-Workspace~491cde9f-221a-4c40-8b9c-cbca6ba2bfc8/collection/49553555-653e004f-c42c-49b1-a3a8-8d98f4bb78af?action=share&source=collection_link&creator=49553555"
+	},
+	"item": [
+		{
+			"name": "/api/v1/auth",
+			"item": [
+				{
+					"name": "/api/v1/auth/register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Hassan\",\r\n    \"lastName\": \"Tarek\",\r\n    \"email\": \"hassan@gmail.com\",\r\n    \"password\": \"hassan_tarek\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/auth/login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiaGFzc2FuQGdtYWlsLmNvbSIsImlhdCI6MTc2MjY3MzQ1OCwiZXhwIjoxNzYyNjc3MDU4fQ.rA1Imcyw2SPM499pOI7XO166prNV5voc5ZMzLmE5NWQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hassan@gmail.com\",\r\n    \"password\": \"hassan_tarek\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/auth/refresh-token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoicmVmcmVzaCIsInN1YiI6Imhhc3NhbkBnbWFpbC5jb20iLCJpYXQiOjE3NjI2NzI5NjcsImV4cCI6MTc2MzI3Nzc2N30.Hp1rZPO7tC1HSaiWYlhZpL6IadH7Elqqr5YRPDEXGuo\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/refresh-token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/auth/logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiaGFzc2FuQGdtYWlsLmNvbSIsImlhdCI6MTc2MjY3MzkzMSwiZXhwIjoxNzYyNjc3NTMxfQ.k8L8nIgd3yG5XjN__e3zsAybi9oGLFTpnTEBvRvk38A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Hassan\",\r\n    \"lastName\": \"Tarek\",\r\n    \"email\": \"hassan@gmail.com\",\r\n    \"password\": \"hassan_tarek\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/auth/logout/token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"Hassan\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/logout/token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/v1/users",
+			"item": [
+				{
+					"name": "/api/v1/users/me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiaGFzc2FuQGdtYWlsLmNvbSIsImlhdCI6MTc2MjY3MzkzMSwiZXhwIjoxNzYyNjc3NTMxfQ.k8L8nIgd3yG5XjN__e3zsAybi9oGLFTpnTEBvRvk38A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users/me",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/users/me/update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiaGFzc2FuQGdtYWlsLmNvbSIsImlhdCI6MTc2MjY3MzAwMCwiZXhwIjoxNzYyNjc2NjAwfQ._ttMWPrytTV8eHfLCSJQcnt-U-G2WbUSOAl1vvk40RQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Hassan\",\r\n    \"lastName\": \"Elashry\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users/me/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/v1/admin",
+			"item": [
+				{
+					"name": "/api/v1/admin/users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiaGFzc2FuQGdtYWlsLmNvbSIsImlhdCI6MTc2MjY3MzkzMSwiZXhwIjoxNzYyNjc3NTMxfQ.k8L8nIgd3yG5XjN__e3zsAybi9oGLFTpnTEBvRvk38A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/admin/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/admin/users/{email}/assign-role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiaGFzc2FuQGdtYWlsLmNvbSIsImlhdCI6MTc2MjY3MzkzMSwiZXhwIjoxNzYyNjc3NTMxfQ.k8L8nIgd3yG5XjN__e3zsAybi9oGLFTpnTEBvRvk38A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/admin/users/hassan@gmail.com/assign-role?roleName=ROLE_ADMIN",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"users",
+								"hassan@gmail.com",
+								"assign-role"
+							],
+							"query": [
+								{
+									"key": "roleName",
+									"value": "ROLE_ADMIN"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/admin/users/{email}/disable",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiaGFzc2FuQGdtYWlsLmNvbSIsImlhdCI6MTc2MjY3MzkzMSwiZXhwIjoxNzYyNjc3NTMxfQ.k8L8nIgd3yG5XjN__e3zsAybi9oGLFTpnTEBvRvk38A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/admin/users/hassan@gmail.com/disable",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"users",
+								"hassan@gmail.com",
+								"disable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
